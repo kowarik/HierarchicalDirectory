@@ -1,0 +1,12 @@
+﻿@using HierarchicalDirectory.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Catalog
+
+<h1>"Folder" - @Model.Name</h1>
+
+<ul>
+    @foreach (var child in Model.Children)
+    {
+        <li><a asp-action="Catalog" asp-route-name="@child.Name">@child.Name</a></li>
+    }
+</ul>
